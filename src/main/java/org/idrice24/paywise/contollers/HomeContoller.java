@@ -8,8 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeContoller {
     public HomeContoller(){}
+
     @GetMapping(value="index")
     public String indexPage(){
         return "index";
+    }
+
+    @GetMapping(value="datainput")
+    public String datainput(){
+        return "datainputpage";
     }
 }
