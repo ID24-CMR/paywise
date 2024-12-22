@@ -3,12 +3,17 @@ package org.idrice24.paywise.services;
 
 import org.idrice24.paywise.entities.Datainput;
 import org.idrice24.paywise.repositories.DatainputRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DatainputServiceImpl implements DatainputService {
 
         private DatainputRepository datainputRepository;
+        @Autowired
+        public void setRespository(DatainputRepository datainputRepository){
+            this.datainputRepository = datainputRepository;
+        }
     @Override
     public Iterable<Datainput> getAllDatainput() {
         return datainputRepository.findAll();
@@ -21,7 +26,7 @@ public class DatainputServiceImpl implements DatainputService {
 
     @Override
     public void saveDatainput(Datainput datainput) {
-        datainputRepository.save(null);
+        datainputRepository.save(datainput);
     }
 
     @Override

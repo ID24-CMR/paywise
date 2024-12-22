@@ -13,9 +13,4 @@ public class HomeContoller {
     public String indexPage(){
         return "index";
     }
-
-    @GetMapping(value="datainput")
-    public String datainput(){
-        return "datainputpage";
-    }
 }
