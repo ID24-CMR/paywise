@@ -1,6 +1,5 @@
 package org.idrice24.paywise.services;
 
-import java.util.List;
 
 import org.idrice24.paywise.entities.Depense;
 import org.idrice24.paywise.repositories.DepenseRepository;
@@ -18,7 +17,7 @@ public class DepenseServiceImpl implements DepenseService {
     }
 
     @Override
-    public List<Depense> getAllDepense(){
+    public Iterable<Depense> getAllDepense(){
         return depenseRepository.findAll();
     }
 

@@ -12,6 +12,7 @@
     <div class="container my-2">
         <div class="card">
             <div class="card-body">
+                <p th:text="${cname}"></p>
                 <div th:switch="${savings}" class="container my-5">
                     <div class="col-md-10">
                         <div th:case="*">
@@ -35,7 +36,7 @@
                                 </thead>
                                 <tbody th:each="saving : ${savings}">
                                     <tr>
-                                        <td>Fortune</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        <td>Fortune</td><td th:text="${pname}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                     </tr>
                                     <tr>
                                         <td>Previsions Debit</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -44,10 +45,10 @@
                                         <td>Solde mens</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                     </tr>
                                     <tr>
-                                        <td>Salaire</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        <td>Salaire</td><td th:text="${jname}"></td><td th:text="${fname}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                     </tr>
                                     <tr>
-                                        <td>Location</td><td th:text="${savings.location}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        <td>Location</td><td th:text="${saving.location}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                     </tr>
                                     <tr>
                                         <td>Nutrition</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
