@@ -27,6 +27,8 @@ public class Depense {
     private Double sportify;
     private Double netflix;
     private Double dept;
+    private int month;
+    private int years;
 
 
     
@@ -132,6 +134,21 @@ public class Depense {
 
     public Double getDept(){
         return dept;
+    }
+
+    public void setMonth(int month){
+        this.month = month;
+    }
+    public int getMonth(){
+        return month;
+    }
+
+    public void setYears(int years){
+        this.years = years;
+    }
+
+    public int getYears(){
+        return years;
     }
     
 }

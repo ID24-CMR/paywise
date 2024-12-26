@@ -31,9 +31,18 @@ public class SavingController {
         
         Iterable<Depense> savings =  depenseService.getAllDepense();
         
-        System.out.println("this is saveing location "+savings.getClass().getName());
-        model.addAttribute("jname", cals.jnName(mensuelService));
+        model.addAttribute("jnname", cals.jnName(mensuelService));
         model.addAttribute("fname", cals.fName(mensuelService));
+        model.addAttribute("mname", cals.mName(mensuelService));
+        model.addAttribute("aname", cals.aName(mensuelService));
+        model.addAttribute("maname", cals.maName(mensuelService));
+        model.addAttribute("jname", cals.jName(mensuelService));
+        model.addAttribute("jtname", cals.jtName(mensuelService));
+        model.addAttribute("auname", cals.auName(mensuelService));
+        model.addAttribute("sname", cals.sName(mensuelService));
+        model.addAttribute("oname", cals.oName(mensuelService));
+        model.addAttribute("nname", cals.nName(mensuelService));
+        model.addAttribute("dname", cals.dName(mensuelService));
         model.addAttribute("savings", savings);
         return "saving";
     }
