@@ -2,6 +2,8 @@ package org.idrice24.paywise.contollers;
 
 
 
+import java.util.List;
+
 import org.idrice24.paywise.entities.Depense;
 import org.idrice24.paywise.services.DatainputService;
 import org.idrice24.paywise.services.DepenseService;
@@ -30,6 +32,8 @@ public class SavingController {
     public String showSaving(Model model){
         
         Iterable<Depense> savings =  depenseService.getAllDepense();
+
+        
         
         model.addAttribute("jnname", cals.jnName(mensuelService));
         model.addAttribute("fname", cals.fName(mensuelService));
@@ -44,6 +48,19 @@ public class SavingController {
         model.addAttribute("nname", cals.nName(mensuelService));
         model.addAttribute("dname", cals.dName(mensuelService));
         model.addAttribute("savings", savings);
+
+
+        int num = cals.depMonth(depenseService);
+        List<Depense> pns = depenseService.getAllDepense();
+        for (Depense depense : pns) {
+            if(depense.getMonth() == num){
+                model.addAttribute("loc", depense.getLocation());
+            }
+        }
+
+
+
+
         return "saving";
     }
 

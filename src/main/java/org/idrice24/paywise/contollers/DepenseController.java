@@ -1,5 +1,6 @@
 package org.idrice24.paywise.contollers;
 
+
 import org.idrice24.paywise.entities.Depense;
 import org.idrice24.paywise.services.DepenseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,23 @@ public class DepenseController {
 
     public DepenseController() {
     }
+
+
+    Calculate cals = new Calculate();
+
+    // @GetMapping(value="saving")
+    // public String showsSaving(Model model){
+    //     int num = cals.depMonth(depenseService);
+    //     List<Depense> pns = depenseService.getAllDepense();
+    //     for (Depense depense : pns) {
+    //         if(depense.getMonth() == num){
+    //             model.addAttribute("loc", depense.getLocation());
+    //         }
+    //     }
+    //     System.out.println(num);
+
+    //     return "saving";
+    // }
 
     
 

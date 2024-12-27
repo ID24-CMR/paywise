@@ -1,6 +1,8 @@
 package org.idrice24.paywise.services;
 
 
+import java.util.List;
+
 import org.idrice24.paywise.entities.Depense;
 import org.idrice24.paywise.repositories.DepenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,7 @@ public class DepenseServiceImpl implements DepenseService {
     }
 
     @Override
-    public Iterable<Depense> getAllDepense(){
+    public List<Depense> getAllDepense(){
         return depenseRepository.findAll();
     }
 

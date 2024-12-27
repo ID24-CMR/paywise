@@ -1,11 +1,13 @@
 package org.idrice24.paywise.services;
 
 
+import java.util.List;
+
 import org.idrice24.paywise.entities.Depense;
 
 public interface DepenseService {
 
-        Iterable<Depense> getAllDepense();
+        List<Depense> getAllDepense();
         void saveDepense(Depense depense);
         void deleteDepense(Double num);
 }
