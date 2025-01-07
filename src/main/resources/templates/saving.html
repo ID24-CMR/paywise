@@ -34,7 +34,7 @@
                                         <th>Decembre</th>
                                     </tr>
                                 </thead>
-                                <tbody th:each="saving : ${savings}">
+                                <tbody >
                                     <tr>
                                         <td>Fortune</td><td th:text="${pname}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                     </tr>
@@ -47,11 +47,22 @@
                                     <tr>
                                         <td>Salaire</td><td th:text="${jnname}"></td><td th:text="${fname}"></td><td th:text="${mname}"></td><td th:text="${aname}"></td><td th:text="${maname}"></td><td th:text="${jname}"></td><td th:text="${jtname}"></td><td th:text="${auname}"></td><td th:text="${sname}"></td><td th:text="${oname}"></td><td th:text="${nname}"></td><td th:text="${dname}"></td>
                                     </tr>
-                                    <tr>
-                                        <td>Location</td><td th:text="${loc}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                    <tr >
+                                        <td>Location</td>
+                                        <td  th:each="mensuel :${mensuelLists}">
+                                            <div th:each="depense :${depenseLists}">
+                                                <div th:if="depense.month != mensuel.month" th:text="${mensuel.month}"></div>
+                                                <div th:unless=" depense.month == 0" th:text="0"></div>
+                                            </div>
+                                            
+                                        </td>
+                                        
+                                        
                                     </tr>
                                     <tr>
-                                        <td>Nutrition</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        <td>Nutrition</td>
+                                        <td th:if="${savings[0].month == 1}" th:text="${savings[0].nutrition}"></td>
+                                        <td th:if="${savings[0].month == 2}" th:text="${savings[0].nutrition}"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                     </tr>
                                     <tr>
                                         <td>Loisir</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -108,6 +119,6 @@
                 </div>
             </div>
         </div>
-    </div>              
+    </div>
 </body>
 </html>

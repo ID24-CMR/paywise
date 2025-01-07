@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DepenseController {
 
     private DepenseService depenseService;
+    
     @Autowired
     public void setDepenseService(DepenseService depenseService){
         this.depenseService = depenseService;

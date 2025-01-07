@@ -12,12 +12,12 @@ public class Mensuel {
     private long id ;
 
     private double salaire;
-    private String month;
+    private int month;
     
     public Mensuel() {
     }
     
-    public Mensuel(long id, double salaire, String month) {
+    public Mensuel(long id, double salaire, int month) {
         this.id = id;
         this.salaire = salaire;
         this.month = month;
@@ -35,10 +35,10 @@ public class Mensuel {
     public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
-    public String getMonth() {
+    public int getMonth() {
         return month;
     }
-    public void setMonth(String month) {
+    public void setMonth(int month) {
         this.month = month;
     }
 

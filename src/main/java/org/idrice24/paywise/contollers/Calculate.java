@@ -6,14 +6,31 @@ import org.idrice24.paywise.services.DepenseService;
 import org.idrice24.paywise.services.MensuelService;
 
 public class Calculate {
+
+
+    public Iterable<Depense> checkDepense(DepenseService depenseService, MensuelService mensuelService){
+        Iterable<Depense> dpns = depenseService.getAllDepense();
+        
+        
+            for (Depense depense : dpns) {
+                if(depense.getMonth() == 0){
+                    depense.setMonth(1);
+                }
+            }
+            
+        
+                return dpns;
+    }
+
+    
     
 
     public double jnName(MensuelService mensuelService){
         double salary;
         Iterable<Mensuel> mns = mensuelService.getAllMensule();
-
+        
         for (Mensuel mensuel : mns) {
-            if(mensuel.getMonth().equalsIgnoreCase("1")){
+            if(mensuel.getMonth() == 1){
                 salary = mensuel.getSalaire();
                 System.out.println("this is to test out salary "+ salary);
                 return salary;
@@ -22,6 +39,7 @@ public class Calculate {
             }
             
         }
+        
         return 0;
     }
 
@@ -30,7 +48,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("2")){
+                        if(mensuel.getMonth() == 2){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -44,7 +62,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("3")){
+                        if(mensuel.getMonth() == 3){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -58,7 +76,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("4")){
+                        if(mensuel.getMonth() == 4){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary avril"+ salary);
                             return salary;
@@ -72,7 +90,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("5")){
+                        if(mensuel.getMonth() == 5){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary mai "+ salary);
                             return salary;
@@ -87,7 +105,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("6")){
+                        if(mensuel.getMonth() == 6){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -102,7 +120,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("7")){
+                        if(mensuel.getMonth()  == 7){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -116,7 +134,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("8")){
+                        if(mensuel.getMonth() == 8){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -130,7 +148,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("9")){
+                        if(mensuel.getMonth() == 9){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -144,7 +162,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("10")){
+                        if(mensuel.getMonth() == 10){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -158,7 +176,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("11")){
+                        if(mensuel.getMonth() ==11){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -172,7 +190,7 @@ public class Calculate {
                     Iterable<Mensuel> mns = mensuelService.getAllMensule();
 
                     for (Mensuel mensuel : mns) {
-                        if(mensuel.getMonth().equalsIgnoreCase("12")){
+                        if(mensuel.getMonth() == 12){
                             salary = mensuel.getSalaire();
                             System.out.println("this is to test out salary "+ salary);
                             return salary;
@@ -194,5 +212,7 @@ public int depMonth(DepenseService depenseService){
     }
     return dept;
 }
+
+
 
 }

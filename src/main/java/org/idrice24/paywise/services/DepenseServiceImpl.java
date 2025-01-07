@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DepenseServiceImpl implements DepenseService {
-    public DepenseRepository depenseRepository;
+
+    private DepenseRepository depenseRepository;
     
     @Autowired
     public void setDepenseRepo(DepenseRepository depenseRepository){
