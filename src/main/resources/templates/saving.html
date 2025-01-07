@@ -49,13 +49,12 @@
                                     </tr>
                                     <tr >
                                         <td>Location</td>
-                                        <td  th:each="mensuel :${mensuelLists}">
-                                            <div th:each="depense :${depenseLists}">
-                                                <div th:if="depense.month != mensuel.month" th:text="${mensuel.month}"></div>
-                                                <div th:unless=" depense.month == 0" th:text="0"></div>
-                                            </div>
+                                        <td th:each="saving: ${savings} " th:if="saving.id != 0">
+                                            <div th:text="${saving.location}"></div>
+                                            <td th:each="mensuel: ${mensuelLists} " th:unless="saving.id == mensuel.month " th:text="0.0"></td>
                                             
                                         </td>
+                                        
                                         
                                         
                                     </tr>
