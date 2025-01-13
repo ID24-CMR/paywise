@@ -10,5 +10,6 @@ public interface DepenseRepository extends CrudRepository<Depense, Long>{
 
     List<Depense> findAll();
     void deleteById(Double num);
+    List<Depense> getDepenseByMonth(int month);
 
 }

@@ -1,28 +1,15 @@
 package org.idrice24.paywise.contollers;
 
+import java.util.List;
+
 import org.idrice24.paywise.entities.Depense;
 import org.idrice24.paywise.entities.Mensuel;
+import org.idrice24.paywise.entities.Saving;
+import org.idrice24.paywise.repositories.SavingRepository;
 import org.idrice24.paywise.services.DepenseService;
 import org.idrice24.paywise.services.MensuelService;
 
-public class Calculate {
-
-
-    public Iterable<Depense> checkDepense(DepenseService depenseService, MensuelService mensuelService){
-        Iterable<Depense> dpns = depenseService.getAllDepense();
-        
-        
-            for (Depense depense : dpns) {
-                if(depense.getMonth() == 0){
-                    depense.setMonth(1);
-                }
-            }
-            
-        
-                return dpns;
-    }
-
-    
+public class Calculate {    
     
 
     public double jnName(MensuelService mensuelService){
@@ -32,7 +19,7 @@ public class Calculate {
         for (Mensuel mensuel : mns) {
             if(mensuel.getMonth() == 1){
                 salary = mensuel.getSalaire();
-                System.out.println("this is to test out salary "+ salary);
+                
                 return salary;
             }else{
                 return 1;
@@ -212,6 +199,102 @@ public int depMonth(DepenseService depenseService){
     }
     return dept;
 }
+
+public Iterable<Saving> checkDepenseJn(SavingRepository savingService) {
+    Iterable<Saving> myList = null;
+    Iterable<Saving> save = savingService.findAll();
+    for (Saving saving : save) {
+        if(saving.getMonth() == 1){
+            return save;
+        }else{
+            saving.setMonth(0);
+            return save;
+        }
+        
+    }
+     return myList;
+    
+}
+
+public Iterable<Saving> checkDepenseFb(SavingRepository savingService) {
+    Iterable<Saving> myList = null;
+    Iterable<Saving> save = savingService.findAll();
+    for (Saving saving : save) {
+        if(saving.getMonth() == 2){
+            return save;
+        }else{
+            saving.setMonth(0);
+            return save;
+        }
+        
+    }
+     return myList;
+    
+}
+public Iterable<Saving> checkDepenseMc(SavingRepository savingService) {
+    Iterable<Saving> myList = null;
+    Iterable<Saving> save = savingService.findAll();
+    for (Saving saving : save) {
+        if(saving.getMonth() == 3){
+            return save;
+        }else{
+            saving.setMonth(0);
+            return save;
+        }
+        
+    }
+     return myList;
+    
+}
+
+public Iterable<Saving> checkDepenseAp(SavingRepository savingService) {
+    Iterable<Saving> myList = null;
+    Iterable<Saving> save = savingService.findAll();
+    for (Saving saving : save) {
+        if(saving.getMonth() == 4){
+            return save;
+        }else{
+            saving.setMonth(0);
+            return save;
+        }
+        
+    }
+     return myList;
+    
+}
+public Iterable<Saving> checkDepenseMa(SavingRepository savingService) {
+    Iterable<Saving> myList = null;
+    Iterable<Saving> save = savingService.findAll();
+    for (Saving saving : save) {
+        if(saving.getMonth() == 5){
+            return save;
+        }else{
+            saving.setMonth(0);
+            return save;
+        }
+        
+    }
+     return myList;
+    
+}
+
+public Iterable<Saving> checkDepenseJ(SavingRepository savingService) {
+    Iterable<Saving> myList = null;
+    Iterable<Saving> save = savingService.findAll();
+    for (Saving saving : save) {
+        if(saving.getMonth() == 6){
+            return save;
+        }else{
+            saving.setMonth(0);
+            return save;
+        }
+        
+    }
+     return myList;
+    
+}
+
+
 
 
 

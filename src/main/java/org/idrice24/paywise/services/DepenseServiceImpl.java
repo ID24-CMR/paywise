@@ -33,4 +33,9 @@ public class DepenseServiceImpl implements DepenseService {
     public void deleteDepense(Double num){
         depenseRepository.deleteById(num);
     }
+
+    @Override
+    public List<Depense> getDepenseByMonth(int month) {
+       return depenseRepository.getDepenseByMonth(month);
+    }
 }

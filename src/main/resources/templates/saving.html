@@ -49,11 +49,13 @@
                                     </tr>
                                     <tr >
                                         <td>Location</td>
-                                        <td th:each="saving: ${savings} " th:if="saving.id != 0">
-                                            <div th:text="${saving.location}"></div>
-                                            <td th:each="mensuel: ${mensuelLists} " th:unless="saving.id == mensuel.month " th:text="0.0"></td>
-                                            
-                                        </td>
+                                        <td th:text="${jnnames[0].location}"></td>
+                                        <td th:text="${fbnames[1].location}"></td>
+                                        <td th:text="${mcnames[0].location}"></td>
+                                        <td th:text="${apnames[0].location}"></td>
+                                        <td th:text="${manames[0].location}"></td>
+                                        <td th:text="${jnames[1].location}"></td>
+
                                         
                                         
                                         

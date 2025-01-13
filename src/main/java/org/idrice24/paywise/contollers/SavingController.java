@@ -33,10 +33,22 @@ public class SavingController {
                 Calculate cals = new Calculate();
     @GetMapping(value="saving")
     public String showSaving(Model model){
+        int month = 0;
+         
          List<Saving> savingList = (List<Saving>) savingRepository.findAll();
-         Iterable<Depense> depenseLists = depenseService.getAllDepense();
+         Iterable<Depense> depenseLists = depenseService.getDepenseByMonth(month);
          Iterable<Mensuel> mensuelLists = mensuelService.getAllMensule();
-         cals.checkDepense(depenseService, mensuelService); 
+
+         
+            
+            model.addAttribute("jnnames", cals.checkDepenseJn(savingRepository));
+            model.addAttribute("fbnames", cals.checkDepenseFb(savingRepository));
+            model.addAttribute("mcnames", cals.checkDepenseMc(savingRepository));
+            model.addAttribute("apnames", cals.checkDepenseAp(savingRepository));
+            model.addAttribute("manames", cals.checkDepenseMa(savingRepository));
+            model.addAttribute("jnames", cals.checkDepenseJ(savingRepository));
+         
+         
 
         model.addAttribute("depenseLists", depenseLists);
          model.addAttribute("mensuelLists", mensuelLists);

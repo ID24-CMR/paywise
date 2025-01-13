@@ -10,4 +10,5 @@ public interface DepenseService {
         List<Depense> getAllDepense();
         void saveDepense(Depense depense);
         void deleteDepense(Double num);
+        List<Depense> getDepenseByMonth(int month);
 }
